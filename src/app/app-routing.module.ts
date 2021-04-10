@@ -1,7 +1,7 @@
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { CommonModule, isPlatformWorkerApp } from '@angular/common';
-import { RouterModule , Routes} from '@angular/router';
+import { NoPreloading, PreloadAllModules, PreloadingStrategy, RouterModule , Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { AboutComponent } from './about/about.component';
@@ -31,13 +31,20 @@ const routes: Routes = [
     loadChildren:
     () => import('./courses/courses.module').then(m => m.CoursesModule) 
   },
+  {
+    path: '**',
+    redirectTo: ''
+  }
 
 ];
 
 @NgModule({
   declarations: [],
   imports: [
-   RouterModule.forRoot(routes)
+   RouterModule.forRoot(routes,{
+   //  preloadingStrategy: PreloadAllModules,
+     preloadingStrategy: NoPreloading
+   })
   ],
   exports: [RouterModule]
 })
