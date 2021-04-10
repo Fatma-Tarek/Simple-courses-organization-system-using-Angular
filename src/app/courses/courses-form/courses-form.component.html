@@ -1,1 +1,51 @@
-<p>courses-form works!</p>
+<!-- 
+    #courseForm: reference to form 3bra 3n ngForm
+    ngForm 3aleha event called ngSubmit
+    by7salo emit when I submit the form
+    and call onSubmit and send name of form as parameter
+    create method in course-form.components.ts
+-->
+<form #courseForm="ngForm" (ngSubmit)="onSubmit(courseForm)">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" #titleRef="ngModel" ngModel required minlength=3/>
+            <div class="alert alert-danger" *ngIf="titleRef.dirty && titleRef.errors?.required">Title is required</div>
+            <div class="alert alert-danger" *ngIf="titleRef.dirty && titleRef.errors?.minlength">Title must be at least 3 characters</div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="title" >Instructor</label>
+            <input type="text" class="form-control" name="instructor"  #InstructorRef="ngModel" ngModel required />
+            <div class="alert alert-danger" *ngIf="InstructorRef.dirty && InstructorRef.invalid">Instructor is required</div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-check">
+                    <input type="checkbox" 
+                    class="form-check-input"
+                     name="isAvailable" 
+                     id=""
+                     #titleRef="ngModel"
+                     ngModel
+                     required>
+                    <label for="isAvailable" class="form-check-label">Available</label>
+            </div>
+        </div>
+        <hr />
+        <br>
+        <button type="submit"
+                class="btn"
+                [ngClass]="{
+                    'btn-outline-success': courseForm.form.valid,
+                    'btn-outline-default': courseForm.form.invalid
+                }"
+                [disabled]="courseForm.form.invalid">Save
+        </button>
+    </div>
+
+
+
+
+
+</form>

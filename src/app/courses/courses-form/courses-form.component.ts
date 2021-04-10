@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-courses-form',
@@ -10,6 +12,16 @@ export class CoursesFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  onSubmit(form: NgForm){
+    console.log(form);
+    if(form.valid){
+     // value is  property in form
+      const course = form.value;
+      console.log(course);
+    }
   }
 
 }
