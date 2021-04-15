@@ -11,4 +11,8 @@ export class CoursesService {
   getCourses(params?){
    return this._http.get(`${environment.baseUrl}/courses`, {params});
   }
+
+  getCoursesById(id){
+    return this._http.get(`${environment.baseUrl}/courses/${id}`);
+   }
 }

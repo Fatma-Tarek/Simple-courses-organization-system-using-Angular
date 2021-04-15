@@ -1,1 +1,10 @@
-<p>courses-details # {{id}} works!</p>
+<div *ngIf="course else loadingTemplate">
+    <p>ID: #{{course.id}} </p>
+    <p>Title: {{course.title}}</p>
+    <p>Instructor: {{course.instructor}}</p>
+    <p> Available: {{course.isAvailabel}}</p>
+</div>
+
+<ng-template #loadingTemplate>
+     Loading
+</ng-template>
