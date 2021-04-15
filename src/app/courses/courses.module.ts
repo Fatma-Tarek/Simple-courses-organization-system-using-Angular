@@ -1,3 +1,4 @@
+import { CoursesService } from './services/courses.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -7,6 +8,7 @@ import { CoursesListComponent } from './courses-list/courses-list.component';
 import { CoursesDetailsComponent } from './courses-details/courses-details.component';
 import { CoursesFormComponent } from './courses-form/courses-form.component';
 import { FormsModule } from '@angular/forms';
+import { CourseItemComponent } from './course-item/course-item.component';
 
 
 @NgModule({
@@ -14,12 +16,14 @@ import { FormsModule } from '@angular/forms';
     CoursesComponent,
     CoursesListComponent,
     CoursesDetailsComponent,
-    CoursesFormComponent
+    CoursesFormComponent,
+    CourseItemComponent
   ],
   imports: [
     CommonModule,
     CoursesRoutingModule,
     FormsModule
-  ]
+  ],
+ // providers : [CoursesService]
 })
 export class CoursesModule { }
