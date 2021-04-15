@@ -13,7 +13,7 @@ export class CourseReactiveFormComponent implements OnInit {
   courseForm: FormGroup = this._fb.group({
     title: ['', Validators.required],
     instructor: ['', Validators.required],
-    isAvailable: [false]
+    isAvailabel: [false]
   })
   constructor(private _fb: FormBuilder,
     private _coursesService: CoursesService,
