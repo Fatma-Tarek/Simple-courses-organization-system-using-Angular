@@ -15,4 +15,9 @@ export class CoursesService {
   getCoursesById(id){
     return this._http.get(`${environment.baseUrl}/courses/${id}`);
    }
+
+   addCourse(course){
+    return this._http.post(`${environment.baseUrl}/courses`, course)
+  }
+
 }

@@ -1,3 +1,10 @@
+ <div class="row" *ngIf="errors?.length">
+    <div class="alert alert-danger" *ngFor="let error of errors">
+      {{ error }}
+    </div>
+  </div> 
+
+
 <!-- [formGroup]="courseForm" name of my form in reactive-form.ts -->
 <!-- Event listen  -->
 <!-- formControlName="title to connect it with reactive form -->
@@ -37,9 +44,9 @@
           <input
             type="checkbox"
             class="form-check-input"
-            formControlName="isAvailabel"
+            formControlName="isAvailable"
           />
-          <label for="isAvailabel" class="form-check-label">Availabel</label>
+          <label for="isAvailable" class="form-check-label">Availabel</label>
         </div>
       </div>
     </div>
