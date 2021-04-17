@@ -5,7 +5,6 @@
 export const environment = {
   production: false,
   baseUrl: `https://afternoon-falls-30227.herokuapp.com/api/v1`
-
 };
 
 /*

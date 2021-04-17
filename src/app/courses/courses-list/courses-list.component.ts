@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesListComponent implements OnInit {
   courses: Course[];
+  searchTerm: string;
   constructor(private _coursesService: CoursesService) { }
 
   ngOnInit(): void {

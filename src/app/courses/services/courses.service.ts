@@ -17,7 +17,15 @@ export class CoursesService {
    }
 
    addCourse(course){
-    return this._http.post(`${environment.baseUrl}/courses`, course)
+    return this._http.post(`${environment.baseUrl}/courses`, course);
+  }
+
+  deleteCourse(id) {
+    return this._http.delete(`${environment.baseUrl}/courses/${id}`);
+  }
+
+  updateCourse(id, course) {
+    return this._http.put(`${environment.baseUrl}/courses/${id}`, course);
   }
 
 }

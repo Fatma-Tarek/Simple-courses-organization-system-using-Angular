@@ -1,6 +1,10 @@
+<div class="form-group">
+  <input type="text" class="form-control" placeholder="Search By name"
+    style="width:300px" [(ngModel)]="searchTerm"/>
+</div>
 <ul class="list-group">
     <app-course-item
-     *ngFor="let singleCourse of courses"
+     *ngFor="let singleCourse of courses | courseFilter:searchTerm" 
       [course]="singleCourse">
     </app-course-item>
 </ul>

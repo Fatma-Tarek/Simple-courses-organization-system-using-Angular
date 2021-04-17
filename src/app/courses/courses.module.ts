@@ -10,6 +10,8 @@ import { CoursesFormComponent } from './courses-form/courses-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CourseItemComponent } from './course-item/course-item.component';
 import { CourseReactiveFormComponent } from './course-reactive-form/course-reactive-form.component';
+import {CourseFilterPipe } from './course-filter/course-filter';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { CourseReactiveFormComponent } from './course-reactive-form/course-react
     CoursesDetailsComponent,
     CoursesFormComponent,
     CourseItemComponent,
-    CourseReactiveFormComponent
+    CourseReactiveFormComponent,
+    CourseFilterPipe
   ],
   imports: [
     CommonModule,

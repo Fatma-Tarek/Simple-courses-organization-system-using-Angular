@@ -44,6 +44,7 @@ export class CourseReactiveFormComponent implements OnInit {
           this.errors = [];
           this._router.navigate(['/courses', res.data.id]);
         },
+        //to show error if it exist
         (err: any) => {
           console.log(err);
           this.errors = err.error.error || [];
